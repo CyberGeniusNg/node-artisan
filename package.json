@@ -1,19 +1,30 @@
 {
-  "name": "artisan-cli",
+  "name": "@cybergenius/node-artisan",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "type": "module"
   },
   "bin": {
-  "node-artisan": "./bin/cli.js"
-},
-
-  "keywords": [],
-  "author": "",
+    "node-artisan": "./bin/cli.js"
+  },
+  "repository": "https://github.com/CyberGeniusNg/node-artisan.git",
+  "keywords": [
+    "NodeJS",
+    "CLI",
+    "Node.js CLI",
+    "Node.js",
+    "Node.js CLI Tool",
+    "Node.js CLI Generator",
+    "Node Artisan",
+    "Node Artisan CLI",
+    "Node Artisan CLI Tool",
+    "Node Artisan CLI Generator"
+  ],
+  "author": "Emmanuel Kolawole",
   "license": "ISC",
-  "description": "",
+  "description": "CLI for Node.js. Create a new project, controller, model, and more.",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "chalk": "^5.4.1",
