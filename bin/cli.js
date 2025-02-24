@@ -13,10 +13,10 @@ import { createMiddleware } from "../commands/middleware.js";
 import { createConfig, listConfigs } from "../commands/config.js";
 import { createJob } from "../commands/job.js";
 import { createValidator } from "../commands/validator.js";
+import { createNewProject } from '../commands/new.js';
 
-program.version("1.0.0").description("Node Artisan CLI");
+program.version("1.0.3").description("Node Artisan CLI - A powerful CLI tool for Node.js development");
 
-// Command: Create Model
 program
   .command("make:model <name>")
   .option("--rc", "Generate route and controller")
@@ -130,5 +130,10 @@ program
   .action((name) => {
     createValidator(name);
   });
+
+program
+  .command('new <projectName>')
+  .description('Create a new Node.js project')
+  .action(createNewProject);
 
 program.parse(process.argv);
