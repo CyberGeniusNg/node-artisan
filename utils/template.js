@@ -71,6 +71,7 @@ export async function generateEnvFile(projectPath) {
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/${path.basename(projectPath)}
 JWT_SECRET=your_jwt_secret_here
+NODE_ENV=development
 `;
     await fs.writeFile(path.join(projectPath, '.env'), envContent.trim());
 }

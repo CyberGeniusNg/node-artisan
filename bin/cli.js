@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 import { program } from "commander";
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import {
   createModel,
   createController,
@@ -15,7 +18,10 @@ import { createJob } from "../commands/job.js";
 import { createValidator } from "../commands/validator.js";
 import { createNewProject } from '../commands/new.js';
 
-program.version("1.0.3").description("Node Artisan CLI - A powerful CLI tool for Node.js development");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+program.version("1.0.5").description("Node Artisan CLI - A powerful CLI tool for Node.js development");
 
 program
   .command("make:model <name>")
@@ -134,6 +140,8 @@ program
 program
   .command('new <projectName>')
   .description('Create a new Node.js project')
-  .action(createNewProject);
+  .action((projectName) => {
+    createNewProject(projectName);
+  });
 
 program.parse(process.argv);

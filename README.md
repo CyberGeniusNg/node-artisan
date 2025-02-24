@@ -1,6 +1,6 @@
 # Node Artisan CLI
 
-A powerful CLI tool for Node.js development that streamlines project creation and management. Inspired by Laravel Artisan, Node Artisan CLI helps you generate boilerplate code, create projects, and manage various components of your Node.js applications.
+A powerful CLI tool for Node.js development that helps you scaffold projects and components quickly.
 
 ## Features
 
@@ -19,8 +19,33 @@ A powerful CLI tool for Node.js development that streamlines project creation an
 
 ## Installation
 
+### Method 1: Global Installation (CLI Tool)
 ```bash
 npm install -g @cybergenius/node-artisan
+```
+
+With global installation, you can use the CLI commands anywhere:
+```bash
+# Create a new Node.js project
+node-artisan new my-app
+
+# Generate components within your project
+node-artisan make:controller UserController
+node-artisan make:model User
+```
+
+### Method 2: Project Dependency
+```bash
+npm install @cybergenius/node-artisan
+```
+
+When installed as a dependency, you can use it in your code:
+```javascript
+import { app, connectDB, initServer } from '@cybergenius/node-artisan';
+
+// Initialize the server
+await connectDB();
+initServer();
 ```
 
 ## Available Commands
@@ -103,6 +128,15 @@ node-artisan make:job ImportData --async       # Asynchronous job
 ```bash
 # Generate .env file
 node-artisan env:generate
+```
+
+## Environment Configuration
+
+Create a `.env` file in your project directory or `.node-artisan.env` in your home directory:
+```
+MONGODB_URI=your_mongodb_connection_string
+PORT=3000
+JWT_SECRET=your_jwt_secret
 ```
 
 ## Project Structure
