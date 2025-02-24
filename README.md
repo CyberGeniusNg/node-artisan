@@ -1,122 +1,67 @@
 # Node Artisan CLI
 
-Node Artisan CLI is a command-line tool for rapidly generating common backend components in a Node.js application. It simplifies the creation of models, controllers, routes, seeders, tests, middleware, jobs, and more.
+A powerful CLI tool for Node.js development that streamlines project creation and management. Inspired by Laravel Artisan, Node Artisan CLI helps you generate boilerplate code, create projects, and manage various components of your Node.js applications.
+
+## Features
+
+- 🚀 Quick project scaffolding
+- 🎮 Generate controllers, models, and routes
+- 🛠️ Built-in authentication setup
+- 📦 Modern project structure
+- ⚡ Express.js integration
+- 🗄️ MongoDB/Mongoose support
 
 ## Installation
 
-Install globally using npm:
-
-```sh
+```bash
 npm install -g @cybergenius/node-artisan
-```
-
-Or use it locally in a project:
-
-```sh
-npm install --save-dev @cybergenius/node-artisan
 ```
 
 ## Usage
 
-Run the CLI using:
-
-```sh
-node-artisan <command>
+Create a new project:
+```bash
+node-artisan new my-project
 ```
 
-### Available Commands
-
-#### Model Generation
-```sh
-node-artisan make:model <name>
+Generate a controller:
+```bash
+node-artisan make:controller UserController
 ```
-Options:
-- `--rc` - Generate a route and controller
-- `--resource` - Generate a model with a resource controller and route
 
-#### Controller Generation
-```sh
-node-artisan make:controller <name>
+Generate a model:
+```bash
+node-artisan make:model User
 ```
-Options:
-- `--resource` - Generate a resource controller with CRUD methods
 
-#### Route Generation
-```sh
-node-artisan make:route <name>
+Generate authentication scaffolding:
+```bash
+node-artisan make:auth
 ```
-Options:
-- `--resource` - Generate a route file with CRUD routes
 
-#### Seeder Generation
-```sh
-node-artisan make:seeder <name>
-```
-Creates a new database seeder.
+## Project Structure
 
-#### Run Seeders
-```sh
-node-artisan db:seed
 ```
-Runs all database seeders.
-
-#### Environment File Generation
-```sh
-node-artisan env:generate
+my-project/
+├── src/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   └── config/
+├── .env
+└── server.js
 ```
-Generates a new `.env` file.
-
-#### Start Development Server
-```sh
-node-artisan serve -p <port>
-```
-Starts the development server (default port: 5000).
-
-#### Test Generation
-```sh
-node-artisan make:test <name>
-```
-Options:
-- `--unit` - Create a unit test
-- `--feature` - Create a feature test
-
-#### Middleware Generation
-```sh
-node-artisan make:middleware <name>
-```
-Creates a new middleware file.
-
-#### Configuration Management
-```sh
-node-artisan make:config <name>
-```
-Creates a new configuration file.
-
-```sh
-node-artisan config:list
-```
-Lists all configuration files.
-
-#### Job Generation
-```sh
-node-artisan make:job <name>
-```
-Options:
-- `--sync` - Create a synchronous job
-- `--async` - Create an asynchronous job
-
-#### Validator Generation
-```sh
-node-artisan make:validator <name>
-```
-Creates a new validator file.
 
 ## License
-This project is licensed under the MIT License.
 
-## Contributing
-Pull requests are welcome! Feel free to improve or add new features.
+ISC License
 
 ## Author
-Developed by [Cyber Genius Ltd](https://www.cybergenius.com.ng).
+
+Emmanuel Kolawole
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
