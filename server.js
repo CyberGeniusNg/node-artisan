@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
 import os from "os";
+import { fileURLToPath } from 'url';
+import url from 'url';
 
 // Load environment variables from multiple possible locations
 const loadEnvConfig = () => {
@@ -94,8 +96,16 @@ const initServer = () => {
 };
 
 // Determine how the server is being used
-if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
-  // Running directly (npm start)
+const isDirectExecution = () => {
+  try {
+    return import.meta.url === url.pathToFileURL(process.argv[1]).href;
+  } catch (error) {
+    return false;
+  }
+};
+
+if (isDirectExecution()) {
+  // Running directly (npm start or node-artisan serve)
   console.log('💫 Starting Node Artisan in standalone mode...');
   connectDB();
   initServer();
