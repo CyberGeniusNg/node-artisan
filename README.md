@@ -143,14 +143,14 @@ JWT_SECRET=your_jwt_secret
 
 ```
 my-project/
-├── src/
-│   ├── controllers/    # Request handlers
-│   ├── models/         # Database models
-│   ├── routes/         # API routes
-│   ├── middleware/     # Custom middleware
-│   ├── config/         # Configuration files
-│   ├── validators/     # Request validation
-│   └── jobs/          # Background jobs
+
+├── controllers/    # Request handlers
+├── models/         # Database models
+├── routes/         # API routes
+├── middleware/     # Custom middleware
+├── config/         # Configuration files
+├── validators/     # Request validation
+└── jobs/          # Background jobs
 ├── tests/
 │   ├── unit/          # Unit tests
 │   └── feature/       # Feature tests
